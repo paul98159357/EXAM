@@ -70,12 +70,12 @@ humidity, temperature = Adafruit_DHT.read_retry(sensor, pin)
 # guarantee the timing of calls to read the sensor).
 # If this happens try again!
 while True:
-	h0,t0=Adafruit_DHT.read_retry(sensor,4)
+	h0,t0=Adafruit_DHT.read_retry(sensor,7)
 	if h0 is not None and t0 is not None:
-		print("The current temperayure is {0:0.1f} C".format(t0,h0))
-		payload = {"datapoints":[{"dataChnId":"Temperature","values":{"value":t0}}]} 
+		print("The current Humidity is {1:0.1f} %".format(t0,h0))
+	        payload = {"datapoints":[{"dataChnId":"Humidity","values":{"value":h0}}]}
 		post_to_mcs(payload)
-		time.sleep(0.5) 
+		time.sleep(1)
 	else:
 		print("Failed to get reading. Try again!")
 		sys.exit(1)
