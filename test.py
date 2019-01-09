@@ -25,8 +25,8 @@ import httplib
 import urllib
 import json
 
-deviceId = "DAMw1ajd"
-deviceKey = "Hb301UwyJSTAmnXt" 
+deviceId = "DxNYXNQc"
+deviceKey = "LHvylNnopuX9WphR" 
 def post_to_mcs(payload): 
 	headers = {"Content-type": "application/json", "deviceKey": deviceKey} 
 	not_connected = 1 
